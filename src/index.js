@@ -1,16 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+
 import { Provider } from 'react-redux';
 import store from './redux/store';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+let persistor = persistStore(store);
+
+ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
