@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
-import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { MDBIcon } from 'mdb-react-ui-kit';
+import { useDispatch } from 'react-redux';
 import { decrease, increase, remove } from './redux/features/cartSlice';
-// import { decrease, getCartTotal, increase, remove } from "./redux/actions";
 
 const CartItem = ({ id, img, title, price, amount }) => {
   const dispatch = useDispatch();

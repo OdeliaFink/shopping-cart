@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { clearCart, getCartTotal } from "./redux/actions";
-import { MDBBtn, MDBIcon, MDBBtnGroup } from 'mdb-react-ui-kit';
+import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 import CartItem from './CartItem';
 import {
   clearCart,
@@ -39,7 +39,7 @@ const CartContainer = () => {
   }
   return (
     <div>
-      <h2 className="lead-mb-0 mt-2">Your Shooping Cart</h2>
+      <h2 className="lead-mb-0 mt-2">Your Shopping Cart</h2>
       {items.map((item) => {
         return <CartItem key={item.id} {...item} />;
       })}
